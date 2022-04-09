@@ -1,0 +1,40 @@
+<!-- Navigation -->
+<nav class="navbar navbar-container navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+        <a style="font-weight: bold;" class="navbar-brand js-scroll-trigger" href="#page-top">Blog</a>
+        <button style="font-weight: bold;" class="navbar-toggler navbar-toggler-right" type="button"
+            data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+            aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ml-auto">
+                <li class="nav-item">
+                    <a style="font-weight: bold;" class="nav-link" href="/">Ana Sayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a style="font-weight: bold;" class="nav-link" href="/about">Hakkımda</a>
+                </li>
+                <li class="nav-item">
+                    <a style="font-weight: bold;" class="nav-link" href="/blog">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a style="font-weight: bold;" class="nav-link" href="/contact">İletişim</a>
+                </li>
+                <% if(!currentUser) { %>
+                    <li class="nav-item">
+                        <a style="font-weight: bold;" class="nav-link" href="/auth/login">Giriş Yap</a>
+                    </li>
+                    <% } else { %>
+                        <li class="nav-item">
+                            <a style="font-weight: bold;" class="nav-link" href="/admin">Admin</a>
+                        </li>
+                        <li class="nav-item">
+                            <a style="font-weight: bold;" class="nav-link" href="/auth/logout">Çıkış Yap</a>
+                        </li>
+                        <% } %>
+            </ul>
+        </div>
+    </div>
+</nav>

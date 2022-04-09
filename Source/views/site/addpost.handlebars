@@ -1,0 +1,105 @@
+<section class="page-image page-image-contact md-padding">
+  <h1 class="text-white text-center">Post Oluştur!</h1>
+
+</section>
+
+<section id="aboutus" class="md-padding">
+  <div class="container">
+  </div>
+</section>
+
+<section id="contact" class="md-padding">
+
+  <div class="row">
+    <div class="col-lg-12">
+      <form action="/posts/test" method="POST" enctype="multipart/form-data">
+        <div class="row">
+          <div class="offset-2 col-md-8">
+            <h3>Post Başlığı</h3>
+            <div class="form-group">
+              <input class="form-control" name="title" type="text" placeholder="Post Başlığı Giriniz..."
+                required="required" data-validation-required-message="Post Başlığı Olmadan Post Paylaşılamaz!" />
+              <p class="help-block text-danger"></p>
+            </div>
+            <h3>Post İçeriği</h3>
+            <div class="form-group">
+              <textarea class="form-control" name="content" placeholder="İçeriğinizi Yazınız..." required="required"
+                data-validation-required-message="Lütfen İçeriğinizi Yazınız!"></textarea>
+              <p class="help-block text-danger"></p>
+            </div>
+            <h3>Post Kategorisi Seçiniz</h3>
+            <div class="form-group mb-5">
+              <select class="form-control" name="category">
+                {{#each categories}}
+                <option value="{{_id}}">
+                  {{name}}
+                </option>
+                {{/each}}
+              </select>
+
+            </div>
+            <h3>Post Resmi Belirleyiniz</h3>
+            <div class="form-group mb-5">
+              <input class="form-control" name="post_image" type="file" required="required"
+                data-validation-required-message="Lütfen Postu Yüklemek İçin Bir Fotoğraf Seçin!" />
+              <p class="help-block text-danger"></p>
+            </div>
+
+            <!-- Link Area -->
+            <h3>Postunuz İle Alakalı Link Bağlantısı İçin Başlık Giriniz</h3>
+            <div class="form-group">
+              <input class="form-control" name="link_title" type="text"
+                placeholder="*Post İle Alakalı İlk Link Başlığı..." />
+              <p class="help-block text-danger"></p>
+            </div>
+            <!-- Link Area -->
+
+            <!-- Link Area -->
+            <h3>Postunuz İle Alakalı Linkin Başlıktan Sonra URL'ini Giriniz</h3>
+            <div class="form-group mb-5">
+              <input class="form-control" name="link" type="text"
+                placeholder="İlk Link Başlığınız İçin Link Giriniz..." />
+              <p class="help-block text-danger"></p>
+            </div>
+            <!-- Link Area -->
+
+            <!-- Link Area -->
+            <h3>Postunuz İle Alakalı 2. Link Bağlantısı İçin Başlık Giriniz</h3>
+            <div class="form-group">
+              <input class="form-control" name="link_title2" type="text"
+                placeholder="*Post İle Alakalı İkinci Link Başlığı..." />
+              <p class="help-block text-danger"></p>
+            </div>
+            <!-- Link Area -->
+
+            <!-- Link Area -->
+            <h3>Postunuz İle Alakalı 2. Linkin Başlıktan Sonra URL'ini Giriniz</h3>
+            <div class="form-group">
+              <input class="form-control" name="link2" type="text"
+                placeholder="İkinci Link Başlığınız İçin Link Giriniz..." />
+              <p class="help-block text-danger"></p>
+            </div>
+            <!-- Link Area -->
+
+          </div>
+
+          <!-- Create Area -->
+          <div class="clearfix"></div>
+          <div class="col-lg-12 text-center">
+            <div id="success"></div>
+            <button class="main-btn" type="submit">Post Oluştur</button>
+            <h3>Geri Dönmek İçin</h3>
+            <div class="form-group">
+              <td>
+                <a class='btn btn-success' href='/admin'>Geri Dön</a>
+              </td>
+            </div>
+          </div>
+          <!-- Create Area -->
+          
+        </div>
+      </form>
+    </div>
+  </div>
+  </div>
+</section>

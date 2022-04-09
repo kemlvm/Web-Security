@@ -1,0 +1,28 @@
+{
+  "name": "dionysos-web-server",
+  "version": "0.0.1",
+  "description": "JavaScript Tabanlı Web Server",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kemal Eukqla",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "connect-mongo": "^3.2.0",
+    "connect-mongodb-session": "^2.4.1",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "express-handlebars": "^5.3.0",
+    "express-session": "^1.17.1",
+    "method-override": "^3.0.0",
+    "moment": "^2.29.1",
+    "mongoose": "^5.12.7",
+    "nodemailer": "^6.6.0",
+    "speed-measure-webpack-plugin": "^1.5.0"
+  },
+  "devDependencies": {
+    "handlebars": "^4.5.0"
+  }
+}

@@ -1,0 +1,61 @@
+<section class="page-image page-image-about md-padding">
+  <h1 class="text-white text-center">Admin Yönetim Alanı</h1>
+</section>
+
+<section id="aboutus" class="md-padding">
+  <div class="container">
+  </div>
+</section>
+
+<section id="team" class="md-padding">
+  <div class="container">
+
+    <div class="clearfix"></div>
+    <div class="mb-5"></div>
+    <div class="row">
+
+
+      <div class="col-md-12">
+      </div>
+      <div class="col-md-12">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Kullanıcı ID Numarası</th>
+              <th>Kullanıcı İsmi</th>
+              <th>Kullanıcıya Ail Email</th>
+              <!--<th>Mesajı</th>-->
+              <th>İletişim Formunu Sil</th>
+              <th>İletişim Formunu Daha Detaylı İncele</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each contact}}
+            <tr>
+              <td>{{_id}}</td>
+              <td>{{name}}</td>
+              <td>{{email}}</td>
+                            <td>
+                <form action="/admin/contacts/{{_id}}?_method=DELETE" method="POST">
+                  <input type="hidden" name="_method" value="DELETE">
+                  <button type="submit" class="btn btn-primary">Formu Sil</button>
+                </form>
+              </td>
+              <td>
+                <a class='btn btn-warning' href="/admin/contacts/{{_id}}">İletişim Formunu İncele</a>
+              </td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+        <h3>Geri Dönmek İçin</h3>
+        <div class="form-group">
+          <td>
+            <a class='btn btn-success' href='/admin'>Geri Dön</a>
+          </td>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,80 @@
+<section class="page-image page-image-blog md-padding">
+	<h1 class="text-white text-center">URANUSFLIX | Blog</h1>
+</section>
+<section id="blog" class="md-padding">
+	<div class="container">
+		<div class="row">
+			{{#if sessionFlash.message}}
+			<div class="{{sessionFlash.type}}">
+				{{sessionFlash.message}}
+			</div>
+			{{/if}}
+			<main id="main" class="col-md-8">
+				<div class="row">
+					{{#each posts}}
+
+					<div class="col-md-6">
+						<div class="blog">
+							<div class="blog-img">
+								<img src="{{post_image}}" class="img-fluid">
+							</div>
+							<div class="blog-content">
+								<ul class="blog-meta">
+									<li><i class="fas fa-users"></i><span class="writer">{{author.username}}</span></li>
+									<li><i class="fas fa-clock"></i><span class="writer">{{generateDate date 'MM DD
+											YYYY'}}</span></li>
+								</ul>
+								<h3>{{title}}</h3>
+								<p>{{truncate content 120}}</p>
+								<a href="/posts/{{_id}}">Devamını Oku</a>
+							</div>
+						</div>
+					</div>
+					{{/each}}
+
+
+					<nav aria-label="Page navigation example">
+						<ul class="pagination justify-content-center">
+
+							{{#paginate current=current pages=pages}}
+
+							{{/paginate}}
+
+							<!--<li class="page-item disabled">
+								<a class="page-link" href="" tabindex="-1">Previous</a>
+							</li>-->
+							<li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+							<li class="page-item"><a class="page-link" href="?page=2">2</a></li>
+							<li class="page-item"><a class="page-link" href="?page=3">3</a></li>
+							<li class="page-item"><a class="page-link" href="?page=4">4</a></li>
+							<li class="page-item"><a class="page-link" href="?page=5">5</a></li>
+							<li class="page-item"><a class="page-link" href="?page=6">6</a></li>
+							<li class="page-item"><a class="page-link" href="?page=7">7</a></li>
+							<li class="page-item"><a class="page-link" href="?page=8">8</a></li>
+							<li class="page-item"><a class="page-link" href="?page=9">9</a></li>
+							<li class="page-item"><a class="page-link" href="?page=10">10</a></li>
+							<li class="page-item"><a class="page-link" href="?page=11">11</a></li>
+							<li class="page-item"><a class="page-link" href="?page=12">12</a></li>
+							<li class="page-item"><a class="page-link" href="?page=13">13</a></li>
+							<li class="page-item"><a class="page-link" href="?page=14">14</a></li>
+							<li class="page-item"><a class="page-link" href="?page=15">15</a></li>
+							<li class="page-item"><a class="page-link" href="?page=16">16</a></li>
+							<li class="page-item"><a class="page-link" href="?page=17">17</a></li>
+							<li class="page-item">
+								<a class="page-link" href="/blog">...</a>
+							</li>
+							<!--<li class="page-item">
+								<a class="page-link" href="#">Next</a>
+							</li>-->
+						</ul>
+					</nav>
+				</div>
+			</main>
+
+			<aside id="aside" class="col-md-4">
+				{{> site-sidebar}}
+			</aside>
+		</div>
+
+	</div>
+</section>

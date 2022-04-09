@@ -1,0 +1,71 @@
+<section class="page-image page-image-about md-padding">
+  <h1 class="text-white text-center">Admin Yönetim Alanı</h1>
+</section>
+
+<section id="aboutus" class="md-padding">
+  <div class="container">
+  </div>
+</section>
+
+<section id="team" class="md-padding">
+  <div class="container">
+
+    <div class="clearfix"></div>
+    <div class="mb-5"></div>
+    <div class="row">
+
+
+      <div class="col-md-12">
+        <form action="" method="POST" enctype="multipart/form-data">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="form-group">
+                <input class="form-control" name="name" type="text" placeholder="Eklenecek Kategori İsmini Giriniz..."
+                  required="required" data-validation-required-message="Lütfen Giriş İçin Bir Email Giriniz!" />
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="col-lg-4 text-center">
+              <div id="success"></div>
+              <button class="main-btn" type="submit">Kategoriyi Oluştur</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-9">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Kategori ID</th>
+              <th>Kategori İsmi</th>
+              <th>Kategoriyi Sil</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each categories}}
+            <tr>
+              <td>{{_id}}</td>
+              <td>{{name}}</td>
+              <td>
+
+               <form action="/admin/categories/{{_id}}?_method=DELETE" method="POST">
+                 <input type="hidden" name="_method" value="DELETE">
+                 <button type="submit" class="btn btn-danger">Kategoriyi Sil</button>
+               </form>
+
+              </td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+        <h3>Geri Dönmek İçin</h3>
+        <div class="form-group">
+          <td>
+            <a class='btn btn-success' href='/admin'>Geri Dön</a>
+          </td>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

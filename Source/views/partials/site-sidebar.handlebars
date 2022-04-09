@@ -1,0 +1,35 @@
+<div class="widget">
+  <div class="widget-search">
+    <form action="/posts/search" method="GET">
+      <input class="search-input form-control" type="text" name="look" placeholder="Aratın...">
+      <button class="search-btn" type="submit"><i class="fas fa-search"></i></button>
+    </form>
+  </div>
+</div>
+
+<div class="widget">
+  <h3 class="mb-3">Kategoriler</h3>
+  <div class="widget-category">
+    {{#each categories}}
+    <a href="/posts/category/{{_id}}">{{name}}<span>{{num_of_posts}}</span></a>
+    {{/each}}
+  </div>
+</div>
+<div class="widget">
+  <h3 class="mb-3">Atılan Son Postlar</h3>
+
+  {{#each (limit posts 5)}}
+
+  <div class="widget-post">
+    <a href="/posts/{{_id}}">
+      <img class="img-fluid" src="{{post_image}}" alt="">{{title}}
+      <div>
+        <span class="writer">{{author.username}}</span>
+      </div>
+    </a>
+    <ul class="blog-meta">
+      <li>{{generateDate date 'MM DD YYYY'}}</li>
+    </ul>
+  </div>
+  {{/each}}
+</div>

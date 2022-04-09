@@ -1,0 +1,90 @@
+<section class="page-image page-image-about md-padding">
+  <h1 class="text-white text-center">Admin Yönetim Alanı</h1>
+</section>
+
+<section id="aboutus" class="md-padding">
+  <div class="container">
+  </div>
+</section>
+
+<section id="team" class="md-padding">
+  <div class="container">
+
+    <div class="clearfix"></div>
+    <div class="row">
+
+      <div class="offset-0 col-md-14">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Post Başlığı</th>
+              <th>Post Kategorisi</th>
+              <th>Yazar</th>
+              <th>Tarih</th>
+              <th>Resmi İncele</th>
+              <th>Düzenle</th>
+              <th>Sil</th>
+              <th>Resmi Düzenle</th>
+              <th>Diğer İşlemler</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each posts}}
+            <tr>
+              <td>{{_id}}</td>
+              <td>{{title}}</td>
+              <td>{{category.name}}</td>
+              <td>{{author.username}}</td>
+              <td>{{generateDate
+                post.date
+                "MM DD YYYY"
+                }}</td>
+              <td><a href="{{post_image}}" class="portfolio-link" data-lightbox="web-design" data-title="Resim 1">
+                  <div class="portfolio-hover">
+                    <div class="portfolio-hover-content">
+                      <i class="fas fa-search fa-3x"></i>
+                    </div>
+                  </div>
+                  <img class="img-fluid" src="img/01-thumbnail.jpg" alt="">
+                </a></td>
+              <td>
+                <a class="btn btn-warning" href="/admin/posts/edit/{{_id}}">Düzenle</a>
+              </td>
+              <td>
+                <form action="/admin/posts/{{_id}}?_method=DELETE" method="POST">
+                  <input type="hidden" name="_method" value="DELETE">
+                  <button type="submit" class="btn btn-primary">Postu Sil</button>
+                </form>
+              </td>
+              <td>
+                <a class='btn btn-success' href='/admin/posts/edit-image/{{_id}}'>Resmi Düzenle</a>
+              </td>
+              <td>
+                <div class='dropdown'>
+                  <button class='btn btn-dark dropdown-toggle' type='button' data-toggle='dropdown' aria-haspopup='true'
+                    aria-expanded='false'> Diğer İşlemler</button>
+                  <div class='dropdown-menu col-md-14' aria-labelledby='dropdownMenuButton'>
+                    <a class='btn btn-warning' href="/posts/{{_id}}">Post Sayfasına Gönderir</a>
+                    <div class='dropdown-divider'></div>
+                    <a class='btn btn-warning' href='/posts/new'>Yeni Post Oluştur</a>
+
+                  </div>
+                </div>
+              </td>
+            </tr>
+            </td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+        <h3>Geri Dönmek İçin</h3>
+        <div class="form-group">
+          <td>
+            <a class='btn btn-success' href='/admin'>Geri Dön</a>
+          </td>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
